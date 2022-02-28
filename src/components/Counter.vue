@@ -1,25 +1,36 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import fetchCount from '../services/fetchCount'
+import { ref, onMounted } from "vue";
+import fetchCount from "../services/fetchCount";
+interface Props {
+  limit: number
+  alertMessageOnLimit?: string
+}
+const props = withDefaults(defineProps<Props>(),{
+  alertMessageOnLimit: 'Can Not Go Any Higher'
+});
 
-const count = ref<number | null>(null)
+const count = ref<number | null>(null);
 
 onMounted(() => {
   fetchCount((initialCount) => {
-    count.value = initialCount
-  })
-})
+    count.value = initialCount;
+  });
+});
 
 function addCount(num: number) {
   if (count.value !== null) {
-    count.value += num
+    if (count.value >= props.limit) {
+      alert(props.alertMessageOnLimit)
+    }
+    else {
+      count.value += num
+    }
   }
 }
-
 </script>
 
 <template>
-  <p>{{ count }}</p>
+  <p>{{ count  }} Times </p>
   <p>
     <button @click="addCount(1)">Add</button>
   </p>
