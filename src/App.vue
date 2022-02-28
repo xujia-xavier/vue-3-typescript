@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue";
-import fetchCount from "./fetchCount"; // a mock fetch function
+import fetchCount from "./service/fetchCount"; // a mock fetch function
 interface AppInfo {
   name: String;
   slogon: string;
