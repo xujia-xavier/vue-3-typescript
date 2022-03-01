@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const emit = defineEmits<{
-  (event: "add-count", num: number): void;
-  (event: "reset-count"): void;
+  (event: "add-count", num: number): void
+  (event: "reset-count"): void
 }>();
 </script>
 <template>
