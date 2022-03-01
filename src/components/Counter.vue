@@ -1,14 +1,8 @@
 <script setup lang="ts">
-<<<<<<< HEAD
-import { ref, onMounted } from "vue";
-import fetchCount from "../services/fetchCount";
-import ControlBar from './ControlBar.vue'
-=======
 import { ref, onMounted } from 'vue'
 import fetchCount from '../services/fetchCount'
 import ControlBar from './ControlBar.vue'
 
->>>>>>> origin/L5_end
 interface Props {
   limit: number
   alertMessageOnLimit?: string
@@ -41,6 +35,6 @@ function addCount(num: number) {
   <p>{{ count  }} Times </p>
   <ControlBar
   @add-count="addCount"
-  @reset-count="Count = 0"
+  @reset-count="count = 0"
   ></ControlBar>
 </template>
