@@ -7,5 +7,4 @@ const emit = defineEmits<{
 <template>
   <button @click="emit('add-count',1)">Add</button>
   <button @click="emit('reset-count')">Reset</button>
-  <button></button>
 </template>
